@@ -8,8 +8,9 @@ class MaxHeap {
 	}
 
 	push(data, priority) {
-		let node = new Node(data,priority)
-		this.insertNode(node)
+		let node = new Node(data,priority);
+		this.insertNode(node);
+		this.shiftNodeUp(node);
 	}
 
 	pop() {
@@ -25,7 +26,7 @@ class MaxHeap {
 	}
 
 	size() {
-		return this.length
+		return this.length;
 	}
 
 	isEmpty() {
@@ -51,7 +52,20 @@ class MaxHeap {
 	}
 
 	shiftNodeUp(node) {
-		
+		if (node.parent && (node.priority > node.parent.priority)) {
+			let indexParent = this.parentNodes.indexOf(node.parent);
+			let index = this.parentNodes.indexOf(node);
+			if (this.parentNodes.includes(node.parent)) {
+				this.parentNodes[index] = node.parent;
+				this.parentNodes[indexParent] = node;
+			} else if (this.parentNodes.includes(node)) {
+				this.parentNodes[indexParent] = node.parent;
+			}
+			node.swapWithParent();
+			this.shiftNodeUp(node);
+		} else {
+			return
+		}
 	}
 
 	shiftNodeDown(node) {
