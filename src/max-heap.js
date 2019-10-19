@@ -10,10 +10,15 @@ class MaxHeap {
   push(data, priority) {
     let node = new Node(data, priority);
     this.insertNode(node);
-    this.shiftNodeUp(node);
+		this.shiftNodeUp(node);
+		this.length++;
   }
 
-  pop() {}
+  pop() {
+		if(this.length === 0){
+			return
+		}
+	}
 
   detachRoot() {}
 
