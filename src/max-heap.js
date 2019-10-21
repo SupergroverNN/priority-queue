@@ -18,9 +18,15 @@ class MaxHeap {
 		if(this.length === 0){
 			return
 		}
+		this.length--;
+		return this.parentNodes[this.length].data
 	}
 
-  detachRoot() {}
+  detachRoot() {
+    let curRoot = this.root;
+    this.root = null;
+
+  }
 
   restoreRootFromLastInsertedNode(detached) {}
 
@@ -68,7 +74,8 @@ class MaxHeap {
     }
   }
 
-  shiftNodeDown(node) {}
+  shiftNodeDown(node) {
+	}
 }
 
 module.exports = MaxHeap;

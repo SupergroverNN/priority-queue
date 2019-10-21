@@ -40,7 +40,7 @@ class Node {
       // если родитель есть
       let curParent = this.parent; // родитель
       let curParentOfParent = curParent.parent; // дед
-      curParent.parent = this; // меняем деда на текущую ноду
+      curParent.parent = this; 
       let curParentRight = curParent.right;
       let curParentLeft = curParent.left;
       if (curParent.right === this) {

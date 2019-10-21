@@ -269,7 +269,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#detachRoot', () => {
+	describe.only('#detachRoot', () => {
 		let h;
 
 		beforeEach(() => {
