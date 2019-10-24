@@ -17,9 +17,10 @@ class MaxHeap {
   pop() {
 		if(this.length === 0){
 			return
-		}
+    }
+    const temp = this.detachRoot()
 		this.length--;
-		return this.parentNodes[this.length].data
+		return temp.data
 	}
 
   detachRoot() {
