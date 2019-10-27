@@ -78,8 +78,20 @@ class MaxHeap {
     }
   }
 
-  shiftNodeDown(node) {
-	}
+	shiftNodeDown(node) {
+    let topPriorityNode = node;
+  	if (node.left && node.left.priority > node.priority) {
+      topPriorityNode = node.left; 
+    }
+    if (node.right && node.right.priority > topPriorityNode.priority) {
+      topPriorityNode = node.right
+    }
+    if (topPriorityNode === node) {
+      return
+    }
+		this.shiftNodeUp(topPriorityNode);		
+		this.shiftNodeDown(node);
+  }
 }
 
 module.exports = MaxHeap;
